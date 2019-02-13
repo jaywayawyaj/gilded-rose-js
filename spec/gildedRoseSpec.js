@@ -102,6 +102,14 @@ describe("Gilded Rose", function() {
         const items = gildedRose.updateQuality();
         expect(items[0].quality).toEqual(11);
       });
+
+      it("quality hits 0 after the event", function() {
+        const gildedRose = new Shop(
+          [ new Item("Backstage passes to a TAFKAL80ETC concert", 0, 40) ]
+        );
+        const items = gildedRose.updateQuality();
+        expect(items[0].quality).toEqual(0);
+      });
     });
   });
 });
