@@ -111,5 +111,22 @@ describe("Gilded Rose", function() {
         expect(items[0].quality).toEqual(0);
       });
     });
+
+    describe("Conjured", function() {
+
+      it("should reduce quality by 2", function() {
+        const gildedRose = new Shop([ new Item("Conjured", 5, 5) ]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].name).toEqual("foo");
+        expect(items[0].quality).toEqual(3);
+      });
+
+      it("quality reduction is doubled after sellIn is 0", function() {
+        const gildedRose = new Shop([ new Item("Conjured", 0, 5) ]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].name).toEqual("foo");
+        expect(items[0].quality).toEqual(1);
+      });
+    });
   });
 });
