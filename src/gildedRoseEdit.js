@@ -69,7 +69,6 @@ class Shop {
   }
 
   updateBackstagePasses(item) {
-    console.log(item);
     if (item.sellIn <= 10 && item.sellIn > 5) {
       item.quality = (item.quality < 50 ? item.quality + 2 : item.quality = 50);
     } else if (item.sellIn <= 5 && item.sellIn >= 0) {

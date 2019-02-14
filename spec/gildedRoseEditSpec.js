@@ -109,9 +109,7 @@ describe("Gilded Rose", function() {
           new Item("Backstage passes to a TAFKAL80ETC concert", -1, 40)
         ]);
         const items = gildedRoseEdit.updateQuality();
-        console.log(items);
         expect(items[0].quality).toEqual(0);
-        console.log(items);
       });
     });
 
