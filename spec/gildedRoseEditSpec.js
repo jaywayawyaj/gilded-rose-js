@@ -117,17 +117,17 @@ describe("Gilded Rose", function() {
 
     describe("Conjured", function() {
 
-      xit("should reduce quality by 2", function() {
+      it("should reduce quality by 2", function() {
         const gildedRoseEdit = new Shop([ new Item("Conjured", 5, 5) ]);
         const items = gildedRoseEdit.updateQuality();
-        expect(items[0].name).toEqual("foo");
+        expect(items[0].name).toEqual("Conjured");
         expect(items[0].quality).toEqual(3);
       });
 
-      xit("quality reduction is doubled after sellIn is 0", function() {
+      it("quality reduction is doubled after sellIn is 0", function() {
         const gildedRoseEdit = new Shop([ new Item("Conjured", 0, 5) ]);
         const items = gildedRoseEdit.updateQuality();
-        expect(items[0].name).toEqual("foo");
+        expect(items[0].name).toEqual("Conjured");
         expect(items[0].quality).toEqual(1);
       });
     });

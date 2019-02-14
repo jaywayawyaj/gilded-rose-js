@@ -31,6 +31,11 @@ class Shop {
         this.updateBackstagePasses(item);
         return item;
         break;
+      case "Conjured":
+        this.reduceSellIn(item);
+        this.updateConjured(item);
+        return item;
+        break;
       default:
         this.reduceSellIn(item);
         this.updateItem(item);
@@ -75,6 +80,16 @@ class Shop {
       item.quality = (item.quality < 50 ? item.quality + 1 : item.quality = 50);
     }
     this.maxQuality(item);
+    return item;
+  }
+
+  updateConjured(item) {
+    if (item.sellIn < 0) {
+      item.quality = (item.quality > 0 ? item.quality - 4 : item.quality = 0);
+    } else {
+      item.quality = (item.quality > 0 ? item.quality - 2 : item.quality = 0);
+    }
+    this.belowZero(item);
     return item;
   }
 
