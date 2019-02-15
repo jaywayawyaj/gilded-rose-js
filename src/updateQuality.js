@@ -1,5 +1,5 @@
 class UpdateQuality {
-  constructor(qualityCheck = new QualityCheck) {
+  constructor(qualityCheck = new ExtremesQualityCheck) {
     this.check = qualityCheck;
   }
 
@@ -10,7 +10,6 @@ class UpdateQuality {
       item.quality = (item.quality > 0 ? item.quality - 1 : item.quality = 0);
     }
     this.check.minQuality(item);
-    return item;
   }
 
   updateAged(item) {
@@ -20,7 +19,6 @@ class UpdateQuality {
       item.quality = (item.quality < 50 ? item.quality + 1 : item.quality = 50);
     }
     this.check.maxQuality(item);
-    return item;
   }
 
   updateBackstagePasses(item) {
@@ -34,7 +32,6 @@ class UpdateQuality {
       item.quality = (item.quality < 50 ? item.quality + 1 : item.quality = 50);
     }
     this.check.maxQuality(item);
-    return item;
   }
 
   updateConjured(item) {
@@ -44,6 +41,5 @@ class UpdateQuality {
       item.quality = (item.quality > 0 ? item.quality - 2 : item.quality = 0);
     }
     this.check.minQuality(item);
-    return item;
   }
 }
