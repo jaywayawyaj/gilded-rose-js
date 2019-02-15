@@ -1,6 +1,6 @@
 class UpdateQuality {
-  constructor(qualityCheck = new ExtremesQualityCheck) {
-    this.check = qualityCheck;
+  constructor(extremesQualityCheck = new ExtremesQualityCheck) {
+    this.check = extremesQualityCheck;
   }
 
   updateItem(item) {
