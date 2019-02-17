@@ -8,10 +8,8 @@ class UpdateQuality {
         this.check.minQuality(item) ?
         item.quality -= 2 : item.quality = this.check.MIN_QUALITY;
     } else {
-      item.quality = (
-        item.quality > this.check.MIN_QUALITY ?
-        item.quality - 1 : item.quality = this.check.MIN_QUALITY
-      );
+        this.check.minQuality(item) ?
+        item.quality -= 1 : item.quality = this.check.MIN_QUALITY;
     }
     this.check.belowMin(item);
   }
